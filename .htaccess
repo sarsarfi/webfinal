@@ -1,0 +1,10 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # فقط اگر فایل یا دایرکتوری فیزیکی وجود نداشته باشد
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+
+    # همه درخواست‌ها به index.php بروند
+    RewriteRule ^ index.php [L]
+</IfModule>
